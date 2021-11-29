@@ -118,7 +118,12 @@ int main()
         // 1. Write a loop to play the tune in the array `notes`
         //    You may recognise the tune :)
         //    Use player.playTone followed by a player.rest() to get the right duration of note as shown above
-        //
+        for(int i = 0; i < sizeof(notes); i++)
+        {
+            player.playTone(notes[i].note, notes[i].octave);
+            wait_us(notes[i].time_ms*2000);
+            player.rest();
+        }
         // 2. Write a nested loop to play the tune twice. Avoid replicating any code where possible.
         
         // ***** MODIFY THE CODE ABOVE HERE *****

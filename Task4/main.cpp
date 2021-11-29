@@ -14,22 +14,41 @@ int main()
     while (true)
     {
     // ***** MODIFY THE CODE BELOW HERE *****
-    // For full marks, debounce the switches with suitable delays
+    // For full marks, debounce the switches with suitable delays#
 
     // 1. Wait for sw1 to be pressed and released
-
+        if(sw1 == 1 and sw2 == 0)
+        {
+            printf("sw1 == 1 and sw2 == 0\n");
+            wait_us(100000);
+        }
     // 2. Wait for sw2 to be pressed and released
-
+        if(sw1 == 0 and sw2 == 1)
+        {
+            printf("sw1 == 0 and sw2 == 1\n");
+            wait_us(100000);
+        }
     // 3. Wait for sw1 and sw2 to be pressed (together)
+        if(sw1 == 1 and sw2 == 1)
+        {
+            printf("sw1 == 1 and sw2 == 1\n");
+            wait_us(100000);
+        }
 
     // 4. Wait for either sw1 or sw2 to be released
-
+        if(sw1 == 0 or sw2 == 0)
+        {
+            printf("sw1 == 0 or sw2 == 0\n");
+            wait_us(1000000000);
+        }
     // 5. Turn on only the yellow and green LEDs
+        leds = 2;
+        leds = 3;
 
     // 6. Wait for 1s
-
+        wait_us(10000000);
     // 7. Turn on only the red LEDs
-
+        leds = 1;
     // ***** MODIFY THE CODE ABOVE HERE *****
     }
 
