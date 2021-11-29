@@ -33,6 +33,8 @@ int main()
     }
     }
 
+    //comment
+
     //2. Using a while-loop, flash the yellow LED on and off 5 times. Each flash should last 0.5s. 
     {
     short flashNum = 5;
