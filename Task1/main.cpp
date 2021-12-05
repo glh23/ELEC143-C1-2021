@@ -9,36 +9,29 @@ int main()
     // ***** MODIFY THE CODE BELOW HERE *****
 
     // 1. Write a for-loop to count from 0 to 100 in steps of 10 - print the results to the serial terminal
-  for (int i = 0; i < 101; i++) 
+  printf("1. Write a for-loop to count from 0 to 100 in steps of 10 - print the results to the serial terminal\n");
+  for (int i = 0; i < 101; i+=10) 
   {
     printf("%i , \n", i);
   }
 
-  //adding space so i can easily see the different questions
-  for (int x = 0; x < 4; x++)
-  {
-    printf("\n");
-  }
+ 
   // 2. Write a for-loop to count from 100 down to 10 in steps of 5 - print the results to the serial terminal
-  for (int j = 100; j > 5; j++) 
+  printf("2. Write a for-loop to count from 100 down to 10 in steps of 5 - print the results to the serial terminal\n");
+  for (int j = 100; j > 5; j-=5) 
   {
     printf("j = %i , \n", j);
-    j = j-6;
   }
-  //adding space so i can easily see the different questions
-  for (int x = 0; x < 4; x++)
-  {
   
-  printf("\n");
-  }
 
 // 3. Write some code to demonstrate nestedfor-loops (one loop within another)
+printf("3. Write some code to demonstrate nestedfor-loops (one loop within another)\n");
 for (int x = 0; x < 3; x++) 
   {
-    printf("x = %i , \n", j);
+    printf("x = %i , \n", x);
     for (int y = 0; y < 3; y++) 
   {
-    printf("y = %i , \n", j);
+    printf("y = %i , \n", y);
   }
   }
 
