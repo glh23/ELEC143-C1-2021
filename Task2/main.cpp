@@ -13,7 +13,14 @@ int main()
     // ***** MODIFY THE CODE BELOW HERE *****
 
     // Using a do-while-loop, count from 0 to +50 in steps of 5 - print the results on row 2 of the LCD screen every 1 second 
-
+    int i = 0;
+    do {
+        display.locate(1, 0);
+        display.printf("i = %i\n", i);
+        i+=5;
+        wait_us(1000000);
+    }
+    while (i < 51);
     // ***** MODIFY THE CODE ABOVE HERE *****
     leds = 7;
 
