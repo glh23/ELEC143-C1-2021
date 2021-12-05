@@ -54,7 +54,7 @@ int main()
     while(flashNum > 0)
     {
         printf("green flash\n");
-        leds = 3;
+        leds = 4;
         wait_us(250000);
         leds = 0;
         flashNum = flashNum-1;

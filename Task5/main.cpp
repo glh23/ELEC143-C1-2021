@@ -10,13 +10,44 @@ int main()
 {
 
     //1. Flash the red led 3 times
-
+    for(unsigned short i = 0; i != 3; i++)
+    {
+        traffic = 0b0000000000000100;
+        wait_us(1000000);
+        traffic = 0;
+        wait_us(1000000);
+    }
     //2. Using the bitwise OR and AND operators (|,&), flash the green LED on and off 3 times
-
+    for(unsigned short i = 0; i != 3; i++)
+    {
+        traffic = 0b0000000001000000;
+        wait_us(1000000);
+        traffic = traffic & 111111111110111111;
+        wait_us(1000000);
+    }
     //3. Using the bitwise XOR operator (^), flash the yellow LED on and off 3 times
-
+    for(unsigned short i = 0; i != 3; i++)
+    {
+        traffic = 0b0000000000001000;
+        wait_us(1000000);
+        traffic = traffic ^ 0b0000000000001000;
+        wait_us(1000000);
+    }
     //4. Using only bitwise operators, display the traffic light sequence red, red+yellow, green, yellow. Leave a 1s gap between each
-    
+    {
+        //red
+        traffic = 0b0000000000000100;
+        wait_us(1000000);
+        //red and yellow
+        traffic = traffic | 0b0000000000001100;
+        wait_us(1000000);
+        //green 
+        traffic = traffic ^ 0b0000000001001100;
+        wait_us(1000000);
+        //yellow
+        traffic = traffic ^ 0b0000000001001000;
+        wait_us(1000000);
+    }
     while (true);
 }
 
