@@ -41,68 +41,70 @@ int main()
         // ***** MODIFY THE CODE BELOW HERE *****
         
         
-        int array1[3] = {345};
-        int array2[3] = {};
-        
-        for(unsigned short i = 0; i != 3; i++)
+        int array1[6] = {1,2,5,4,2,3};
+        int array2[6] = {0,0,0,0,0,0};
+
+        for(unsigned short i = 0; i != 6; i++)
         {
             wait_us(200000);
-            while(SW1 == 1 and SW2 == 0 and SW3 == 0 and SW4 == 0 and SW5 ==0 ){}
+            while(SW1 == 0 and SW2 == 0 and SW3 == 0 and SW4 == 0 and SW5 ==0 ){}
             
-            //sw1
-            while(SW1 == 1 and SW2 == 0 and SW3 == 0 and SW4 == 0 and SW5 ==0 ){}
-            printf("sw1 == 1 and sw2 == 0 and SW3 == 0 and SW4 == 0 and SW5 ==0\n");
+            
+            if (SW1==1) {
+                array2[i]=1;
+                printf("pressed SW1 \n");
+            }
+            else if (SW2==1) {
+                array2[i]=2;
+                printf("pressed SW2 \n");
+            }
+            else if (SW3==1) {
+                array2[i]=3;
+                printf("pressed SW3 \n");
+            }
+            else if (SW4==1) {
+                array2[i]=4;
+                printf("pressed SW4 \n");
+            }
+            else if (SW5==1){
+                array2[i]=5;
+                printf("pressed SW5 \n");
+            }
+        }
+        //end for
+        bool pin = false;
+        for(unsigned short i = 0; i!=6; i++)
+        {
+            printf("i = %i\n", i);
+            if(array1[i] == array2[i])
+            {
+                pin = true;
+            }
+            else
+            {
+                pin = false;
+            }
+        }
 
-            alarm.playTone("C", Buzzer::HIGHER_OCTAVE);
-            wait_us(250000);
-            alarm.rest();
-            wait_us(200000);
-
-            //sw2
-            while(SW1 == 0 and SW2 == 1 and SW3 == 0 and SW4 == 0 and SW5 ==0 ){}
-            printf("sw1 == 1 and sw2 == 0 and SW3 == 0 and SW4 == 0 and SW5 ==0\n");
-
-            alarm.playTone("A", Buzzer::HIGHER_OCTAVE);
-            wait_us(250000);
-            alarm.rest();
-            wait_us(200000);
-
-            //sw3
-            while(SW1 == 0 and SW2 == 0 and SW3 == 1 and SW4 == 0 and SW5 ==0 ){}
-            printf("sw1 == 1 and sw2 == 0 and SW3 == 0 and SW4 == 0 and SW5 ==0\n");
-
-            alarm.playTone("A", Buzzer::HIGHER_OCTAVE);
-            wait_us(250000);
-            alarm.rest();
-            wait_us(200000);
-
-            //sw4
-            while(SW1 == 0 and SW2 == 0 and SW3 == 0 and SW4 == 1 and SW5 ==0 ){}
-            printf("sw1 == 1 and sw2 == 0 and SW3 == 0 and SW4 == 0 and SW5 ==0\n");
-
-            alarm.playTone("A", Buzzer::HIGHER_OCTAVE);
-            wait_us(250000);
-            alarm.rest();
-            wait_us(200000);
-
-            //sw5
-            while(SW1 == 0 and SW2 == 0 and SW3 == 0 and SW4 == 0 and SW5 ==1 ){}
-            printf("sw1 == 1 and sw2 == 0 and SW3 == 0 and SW4 == 0 and SW5 ==0\n");
-
-            alarm.playTone("A", Buzzer::HIGHER_OCTAVE);
-            wait_us(250000);
-            alarm.rest();
-            wait_us(200000);
-
+        if (pin == true) {
+            printf("it worked\n");
+            for(unsigned short i = 0; i!=3; i++)
+            {
+                leds = 4;
+                wait_us(1000000);
+                leds = 0;
+                wait_us(1000000);
+            }
         }
         
-        if(array1 == array2)
+        else 
         {
-            printf("correct\n");
-        }
-        else
-        {
-            printf("incorrcect\n");
+            printf("wrong combination\n");
+            leds = 1;
+            alarm.playTone("A", Buzzer::HIGHER_OCTAVE);
+            wait_us(5000000);
+            alarm.rest();
+            leds = 0;
         }
         // ***** MODIFY THE CODE ABOVE HERE *****
     }
