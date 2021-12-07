@@ -52,18 +52,15 @@ int main()
 
     // 2. Write a nested loop to perform a matrix multiplication M*N and store the result in Y
     double x;
-    double X = 1;
+    double X;
     for(unsigned short z = 0; z!=3; z++)
     {
-        
+        X=1;
         for(unsigned short n = 0; n!=3; n++)
         {
-            for(unsigned short m = 0; m!=3; m++)
-            {
-                x = ((M[n][0]*N[0][0]) + (M[n][1]*N[1][0]) + (M[n][2]*N[2][0]));
-                printf("x = %f\n", x);
-            }
-            X = X*x;
+            x = ((M[n][0]*N[0][0]) + (M[n][1]*N[1][0]) + (M[n][2]*N[2][0]));
+            X = x;
+            printf("X = %f\n", X);
         }
         y[z] = X;
         printf("array y = %f\n", y[z]);

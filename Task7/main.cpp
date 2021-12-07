@@ -120,9 +120,16 @@ int main()
         //    Use player.playTone followed by a player.rest() to get the right duration of note as shown above
         for(int i = 0; i < sizeof(notes); i++)
         {
+            if(notes[i].note[0] == '-')
+            {
+                wait_us(notes[i].time_ms*1000);
+            }
+            else
+            {
             player.playTone(notes[i].note, notes[i].octave);
             wait_us(notes[i].time_ms*1000);
             player.rest();
+            }
         }
         // 2. Write a nested loop to play the tune twice. Avoid replicating any code where possible.
         int x = 0;
@@ -130,9 +137,16 @@ int main()
         {
             for(int i = 0; i < sizeof(notes); i++)
             {
-                player.playTone(notes[i].note, notes[i].octave);
-                wait_us(notes[i].time_ms*1000);
-                player.rest();
+                if(notes[i].note[0] == '-')
+                {
+                    wait_us(notes[i].time_ms*1000);
+                }
+                else
+                {
+                    player.playTone(notes[i].note, notes[i].octave);
+                    wait_us(notes[i].time_ms*1000);
+                    player.rest();
+                }
             }
             x+=1;
         }
