@@ -83,6 +83,7 @@ int main()
             else
             {
                 pin = false;
+                break;
             }
         }
 

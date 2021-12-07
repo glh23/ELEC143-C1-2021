@@ -26,7 +26,7 @@ void displayArray(int rows, int cols, double *Array)
 }
 
 // ***** For (1) WRITE YOUR ARRAY Y HERE *****
-
+double y[4];
 // ***** For (3) WRITE YOUR FUNCTION HERE *****
 
 // *****  END YOUR FUNCTION HERE  *****
@@ -38,8 +38,10 @@ int main()
 
     // ***** MODIFY THE CODE BELOW HERE *****
 
-    // 1. Create another Array Y with the correct dimensions to hold the result of M*N (see comments above)
-
+    // 1. Create another Array Y with the correct dimensions to hold the result of M*N (see  comments above)
+    double y1 = ((M[0][0]*N[0][0]) + (M[0][1]*N[1][0]) + (M[0][2]*N[2][0]))   *   ((M[0][0]*N[0][1]) + (M[0][1]*N[1][1]) + (M[0][2]*N[2][1]))   *   ((M[0][0]*N[0][2]) + (M[0][1]*N[1][2]) + (M[0][2]*N[2][2]));
+    double y2 = ((M[1][0]*N[0][0]) + (M[1][1]*N[1][0]) + (M[1][2]*N[2][0]))   *   ((M[1][0]*N[0][1]) + (M[1][1]*N[1][1]) + (M[1][2]*N[2][1]))   *   ((M[1][0]*N[0][2]) + (M[1][1]*N[1][2]) + (M[1][2]*N[2][2]));
+    double y3 = ((M[2][0]*N[0][0]) + (M[2][1]*N[1][0]) + (M[2][2]*N[2][0]))   *   ((M[2][0]*N[0][1]) + (M[2][1]*N[1][1]) + (M[2][2]*N[2][1]))   *   ((M[2][0]*N[0][2]) + (M[2][1]*N[1][2]) + (M[2][2]*N[2][2]));
     // 2. Write a nested loop to perform a matrix multiplication M*N and store the result in Y
 
     // 3. Write a function to multiply two matrices together (see comments above). Include some text code to demonstrate it working
