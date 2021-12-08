@@ -17,7 +17,9 @@ int main()
     do {
         display.locate(1, 0);
         display.printf("i = %i\n", i);
+        
         i+=5;
+        
         wait_us(1000000);
     }
     while (i < 51);

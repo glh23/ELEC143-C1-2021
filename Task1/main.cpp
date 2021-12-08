@@ -9,6 +9,7 @@ int main()
     // ***** MODIFY THE CODE BELOW HERE *****
 
     // 1. Write a for-loop to count from 0 to 100 in steps of 10 - print the results to the serial terminal
+  
   printf("1. Write a for-loop to count from 0 to 100 in steps of 10 - print the results to the serial terminal\n");
   for (int i = 0; i < 101; i+=10) 
   {
@@ -17,6 +18,7 @@ int main()
 
  
   // 2. Write a for-loop to count from 100 down to 10 in steps of 5 - print the results to the serial terminal
+  
   printf("2. Write a for-loop to count from 100 down to 10 in steps of 5 - print the results to the serial terminal\n");
   for (int j = 100; j > 5; j-=5) 
   {
@@ -25,6 +27,7 @@ int main()
   
 
 // 3. Write some code to demonstrate nestedfor-loops (one loop within another)
+
 printf("3. Write some code to demonstrate nestedfor-loops (one loop within another)\n");
 for (int x = 0; x < 3; x++) 
   {

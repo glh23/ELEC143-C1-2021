@@ -40,37 +40,33 @@ int main()
     // 2. Write a nested loop to perform a matrix multiplication M*N and store the result in Y
     
     
-    //rows in M
+    //rows in M (going along)
     for(int g = 0; g < 4; g++)
     {
-        //colums in M
+        //colums in M (up and downy)
         for(int h = 0; h < 4 ; h++)
         {
-            //colums in N
-            for(int j = 0; j<3 ; j++)
+            //colums in N (up and downy)
+            for(int j = 0; j < 3 ; j++)
             {
-                //god i love maths *crying sounds* took me way too long
+                //y cant have j in it because it only takes the 3rd one
                 y[g][h] += M[g][j]*N[j][h];
                 printf("y[%i][%i] =  %f\n", g, h, y[g][h]);
             }
         }
     }
 
+    //leave space so i can read
     printf("\n");
     printf("the answer\n");
     printf("\n");
 
-    //print it
-    for(int k = 1; k < 5; k++)
-    {
-        for(int l = 1; l < 5; l++)
-        {
-            printf("y[%i][%i] =  %f, ", k, l, y[k][l]);
-        }
-        printf("\n");
-    }
+    //output the damm thing
+    displayArray(4,4,(double*)y);
+    printf("\n");
     
     // 3. Write a function to multiply two matrices together (see comments above). Include some text code to demonstrate it working
+
 
     // ***** MODIFY THE CODE ABOVE HERE *****
 

@@ -47,9 +47,10 @@ int main()
         for(unsigned short i = 0; i != 6; i++)
         {
             wait_us(200000);
+            //does nothing when nothing is pressed
             while(SW1 == 0 and SW2 == 0 and SW3 == 0 and SW4 == 0 and SW5 ==0 ){}
             
-            
+            //check if anything is pressed
             if (SW1==1) {
                 array2[i]=1;
                 printf("pressed SW1 \n");
