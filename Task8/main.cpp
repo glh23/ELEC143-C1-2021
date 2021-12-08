@@ -44,10 +44,10 @@ int main()
     for(int g = 0; g < 4; g++)
     {
         //colums in M
-        for(int h = 0; h < 3 ; h++)
+        for(int h = 0; h < 4 ; h++)
         {
             //colums in N
-            for(int j = 0; j<4 ; j++)
+            for(int j = 0; j<3 ; j++)
             {
                 //god i love maths *crying sounds* took me way too long
                 y[g][h] += M[g][j]*N[j][h];
@@ -61,9 +61,9 @@ int main()
     printf("\n");
 
     //print it
-    for(int k; k < 4; k++)
+    for(int k = 1; k < 5; k++)
     {
-        for(int l; l < 4; l++)
+        for(int l = 1; l < 5; l++)
         {
             printf("y[%i][%i] =  %f, ", k, l, y[k][l]);
         }
