@@ -49,7 +49,7 @@ int main()
             //colums in N
             for(int j = 0; j<4 ; j++)
             {
-                //god i love maths *crying sounds*
+                //god i love maths *crying sounds* took me way too long
                 y[g][h] += M[g][j]*N[j][h];
                 printf("y[%i][%i] =  %f\n", g, h, y[g][h]);
             }
@@ -57,15 +57,17 @@ int main()
     }
 
     printf("\n");
-    printf("\n");
+    printf("the answer\n");
     printf("\n");
 
+    //print it
     for(int k; k < 4; k++)
     {
         for(int l; l < 4; l++)
         {
-            printf("y[%i][%i] =  %f\n", k, l, y[k][l]);
+            printf("y[%i][%i] =  %f, ", k, l, y[k][l]);
         }
+        printf("\n");
     }
     
     // 3. Write a function to multiply two matrices together (see comments above). Include some text code to demonstrate it working
